@@ -1,0 +1,11 @@
+{
+  "name": "generator-sample",
+  "version": "1.0.0",
+  "description": "自定义generator模块",
+  "main": "index.js",
+  "author": "Jerry",
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^5.4.2"
+  }
+}
