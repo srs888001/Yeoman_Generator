@@ -1,5 +1,5 @@
 {
-  "name": "generator-sample",
+  "name": "generator-jerry_srs-sample",
   "version": "1.0.0",
   "description": "自定义generator模块",
   "main": "index.js",

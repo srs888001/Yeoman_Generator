@@ -5,6 +5,23 @@
 //里面有多少个方法， 就执行多少个方法
 const Generator = require("yeoman-generator")
 module.exports = class extends Generator {
+
+    prompting () {
+        // Yeoman在询问用户环节会自动调用这个方法
+        // 在此方法中科院调用父类的 prompt() 方法发出对用户的命令行询问
+        return this.prompt([
+            {
+                type: 'input',
+                name: 'name',
+                message: 'your name',
+                default: this.appname // this.appname项目主动生成
+            }
+        ]).then(answers => {
+            //answers => {"name":"your project name"}
+            this.answers = answers
+        })
+    }
+
     wirting () {
         // Yeoman自动在生成文件阶段调用此方法
         // 我们这里尝试往项目目录中写入文件
@@ -34,7 +51,7 @@ module.exports = class extends Generator {
             title: 'Hello jerry-', 
             success: false , 
             body: { 
-                name: 'Jerry',
+                name: this.answers.name,
                 age: 18
             }
         }
